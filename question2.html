@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pregunta 2 - Patrimonio de Buga</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Pregunta 2</h1>
+        <div class="header-info">
+            <div class="datetime-container">
+                <span id="current-datetime">2025-03-17 16:56:08</span>
+            </div>
+            <div class="user-container">
+                <span id="current-user">camilog26</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="access-validation">
+            <h2>Validar Acceso</h2>
+            <form id="access-form" class="access-form">
+                <div class="form-group">
+                    <label for="access-key">Ingrese la clave de acceso:</label>
+                    <input type="text" id="access-key" required pattern="BUGA-\d{4}" placeholder="BUGA-XXXX">
+                </div>
+                <button type="submit">Validar</button>
+            </form>
+        </section>
+
+        <section id="question-content" style="display: none;">
+            <div class="question-container">
+                <h2>¿Cuál es el nombre completo del templo principal de Buga?</h2>
+                
+                <form id="question-form">
+                    <div class="options">
+                        <label>
+                            <input type="radio" name="answer" value="1">
+                            Iglesia del Señor de los Milagros
+                        </label>
+                        <label>
+                            <input type="radio" name="answer" value="2">
+                            Basílica Menor del Señor de los Milagros
+                        </label>
+                        <label>
+                            <input type="radio" name="answer" value="3">
+                            Catedral del Señor de los Milagros
+                        </label>
+                        <label>
+                            <input type="radio" name="answer" value="4">
+                            Santuario del Señor de los Milagros
+                        </label>
+                    </div>
+                    <button type="submit">Enviar Respuesta</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Descubriendo el Patrimonio. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/questions.js"></script>
+</body>
+</html>

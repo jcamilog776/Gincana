@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descubriendo el Patrimonio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Descubriendo el Patrimonio</h1>
+        <div class="header-info">
+            <div class="datetime-container">
+                <span id="current-datetime">2025-03-17 16:49:20</span>
+            </div>
+            <div class="user-container">
+                <span id="current-user">camilog26</span>
+            </div>
+            <div class="buttons-container">
+                <button id="admin-button" class="header-button">Administrar</button>
+                <button id="register-button" class="header-button">Registrar Equipo</button>
+                <button id="start-game-button" class="header-button">Iniciar Juego</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Sección de Bienvenida -->
+        <section id="welcome" class="welcome-section">
+            <h2>Bienvenidos al Juego del Patrimonio</h2>
+            <p>Explora y aprende sobre el patrimonio cultural de Buga a través de este emocionante juego de preguntas.</p>
+        </section>
+
+        <!-- Panel de Administración -->
+        <section id="admin-panel" style="display: none;">
+            <h2>Panel de Administración</h2>
+            <form id="admin-login-form" class="admin-form">
+                <div class="form-group">
+                    <label for="admin-user">Usuario:</label>
+                    <input type="text" id="admin-user" required>
+                </div>
+                <div class="form-group">
+                    <label for="admin-key">Clave de Acceso:</label>
+                    <input type="password" id="admin-key" required>
+                </div>
+                <button type="submit">Ingresar</button>
+            </form>
+        </section>
+
+        <!-- Dashboard del Administrador -->
+        <section id="admin-dashboard" style="display: none;">
+            <div class="admin-tabs">
+                <button class="tab-button active" data-tab="teams">Equipos</button>
+                <button class="tab-button" data-tab="scores">Puntajes</button>
+            </div>
+            
+            <div id="teams-panel" class="tab-panel">
+                <h3>Equipos Registrados</h3>
+                <div class="teams-list"></div>
+            </div>
+            
+            <div id="scores-panel" class="tab-panel" style="display: none;">
+                <h3>Tabla de Puntajes</h3>
+                <div class="scores-table"></div>
+            </div>
+        </section>
+
+        <!-- Sección de Registro de Equipo -->
+        <section id="register-team" style="display: none;">
+            <h2>Registro de Equipo</h2>
+            <form id="register-team-form">
+                <div class="form-group">
+                    <label for="school-name">Colegio:</label>
+                    <select id="school-name" required>
+                        <option value="">Seleccione un colegio</option>
+                        <option value="Académico">Académico</option>
+                        <option value="Normal">Normal Superior</option>
+                        <option value="SanVicente">San Vicente</option>
+                        <option value="LaPaz">La Paz</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="team-name">Nombre del Equipo:</label>
+                    <input type="text" id="team-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="responsible-name">Nombre del Responsable:</label>
+                    <input type="text" id="responsible-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="responsible-id">Identificación del Responsable:</label>
+                    <input type="text" id="responsible-id" required>
+                </div>
+
+                <button type="submit">Registrar Equipo</button>
+            </form>
+        </section>
+
+        <!-- Sección de Registro de Estudiantes -->
+        <section id="register-students" style="display: none;">
+            <h2>Registro de Estudiantes</h2>
+            <form id="register-students-form">
+                <div id="students-container"></div>
+                <button type="submit">Registrar Estudiantes</button>
+            </form>
+        </section>
+
+        <!-- Sección de Clave de Acceso -->
+        <section id="access-key" style="display: none;">
+            <h2>¡Registro Completado!</h2>
+            <div class="success-message">
+                <p>Su clave de acceso es:</p>
+                <div id="team-key" class="team-key"></div>
+                <p class="key-instructions">Guarde esta clave, la necesitará para acceder a las preguntas del juego.</p>
+            </div>
+        </section>
+
+        <!-- Sección de Preguntas -->
+        <section id="questions-menu" style="display: none;">
+            <h2>Preguntas Disponibles</h2>
+            <div class="questions-grid">
+                <a href="question1.html" class="question-card">Pregunta 1</a>
+                <a href="question2.html" class="question-card">Pregunta 2</a>
+                <a href="question3.html" class="question-card">Pregunta 3</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Descubriendo el Patrimonio. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-config.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
